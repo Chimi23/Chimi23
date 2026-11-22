@@ -57,14 +57,24 @@ em { font-style: italic; color: var(--accent); }
   align-items: center;
   justify-content: space-between;
   padding: 1.4rem var(--gutter);
-  transition: background 0.4s, padding 0.4s;
+  isolation: isolate;
+  transition: padding 0.4s;
 }
-.nav.scrolled {
+/* The blur lives on a pseudo-element: backdrop-filter on .nav itself would make
+   it the containing block for the fixed-position mobile menu. */
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(14, 14, 14, 0.88);
   backdrop-filter: blur(10px);
-  padding-block: 0.9rem;
   border-bottom: 1px solid var(--line);
+  opacity: 0;
+  transition: opacity 0.4s;
 }
+.nav.scrolled { padding-block: 0.9rem; }
+.nav.scrolled::before { opacity: 1; }
 .brand { font-family: var(--serif); font-size: 1.7rem; letter-spacing: 0.02em; }
 .brand span { color: var(--accent); }
 .nav-links { display: flex; gap: 2.5rem; }
