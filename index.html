@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chimi — Photography</title>
+  <meta name="description" content="Photography portfolio: landscapes, portraits, street and travel.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav" id="nav">
+    <a href="#top" class="brand">Chimi<span>.</span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span>
+    </button>
+    <nav id="nav-links" class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="Featured photograph">
+      <div class="hero-slides" id="hero-slides"></div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">Photography</p>
+        <h1>Light, land<br><em>&amp; the people within it</em></h1>
+        <a href="#work" class="btn">View the work</a>
+      </div>
+      <div class="hero-dots" id="hero-dots" role="tablist" aria-label="Featured images"></div>
+    </section>
+
+    <section class="work" id="work">
+      <div class="section-head">
+        <h2>Selected Work</h2>
+        <div class="filters" id="filters" role="group" aria-label="Filter photographs"></div>
+      </div>
+      <div class="gallery" id="gallery"></div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="https://picsum.photos/seed/portrait-chimi/800/1000" alt="Portrait of the photographer" loading="lazy">
+      </div>
+      <div class="about-text">
+        <p class="eyebrow">About</p>
+        <h2>Seeing slowly</h2>
+        <p>I photograph mountains, markets and the quiet moments in between. My work is about patience: waiting for the light to turn, for a face to soften, for a street to fall into place.</p>
+        <p>Available for portraits, events, editorial and travel assignments.</p>
+        <dl class="stats">
+          <div><dt>Years shooting</dt><dd>8</dd></div>
+          <div><dt>Countries</dt><dd>12</dd></div>
+          <div><dt>Prints sold</dt><dd>300+</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <p class="eyebrow">Contact</p>
+      <h2>Let’s make something</h2>
+      <p class="lede">For bookings, prints or collaborations, send a note.</p>
+      <form class="contact-form" id="contact-form">
+        <label>Name<input type="text" name="name" required autocomplete="name"></label>
+        <label>Email<input type="email" name="email" required autocomplete="email"></label>
+        <label class="full">Message<textarea name="message" rows="4" required></textarea></label>
+        <button type="submit" class="btn">Send message</button>
+        <p class="form-note" id="form-note" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>© <span id="year"></span> Chimi. All photographs are copyrighted.</p>
+    <div class="social">
+      <a href="#" aria-label="Instagram">Instagram</a>
+      <a href="https://github.com/Chimi23" aria-label="GitHub">GitHub</a>
+    </div>
+  </footer>
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+    <button class="lb-close" aria-label="Close">×</button>
+    <button class="lb-prev" aria-label="Previous photo">‹</button>
+    <figure>
+      <img id="lb-img" alt="">
+      <figcaption><strong id="lb-title"></strong><span id="lb-meta"></span><span id="lb-count"></span></figcaption>
+    </figure>
+    <button class="lb-next" aria-label="Next photo">›</button>
+  </div>
+
+  <script src="photos.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
